@@ -26,8 +26,7 @@ RUN set -eux; \
 
 WORKDIR /app
 
-RUN mkdir -p /app/data /etc/floci/aws \
-    && printf '[default]\nendpoint_url = http://localhost:4566\n' > /etc/floci/aws/config \
+RUN mkdir -p /app/data \
     && chown 1001:root /app \
     && chmod "g+rwX" /app \
     && chown 1001:root /app/data \

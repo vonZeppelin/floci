@@ -49,8 +49,7 @@ COPY --from=tools /toolsroot/ /
 
 RUN useradd -r -u 1001 -g root -d /app -s /sbin/nologin floci
 
-RUN mkdir -p /app/data /etc/floci/aws \
-    && printf '[default]\nendpoint_url = http://localhost:4566\n' > /etc/floci/aws/config \
+RUN mkdir -p /app/data \
     && chown -R 1001:root /app \
     && chmod -R g+rwX /app
 VOLUME /app/data
